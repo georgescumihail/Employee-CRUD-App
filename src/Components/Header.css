@@ -1,0 +1,42 @@
+
+#header-container{
+    width: 90%;
+    height: 150px;
+    padding: 40px 50px 20px 50px;
+    display: flex;
+    margin: 0 auto;
+    justify-content: space-between;
+    border-bottom: 1px solid #ccc;
+}
+
+#header-title{
+    font-size: 30px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-left: 25px;
+}
+
+#add-button{
+    border-radius: 5px;
+    border-style: none;
+    background-color: #4488ee;
+    color: #f9f9f9;
+    width: 120px;
+    height: 35px;
+    margin-top: 10px;
+    margin-right: 60px;
+    justify-self: right;
+}
+
+@media screen and (max-width: 1024px) {
+    #header-title{
+        font-size: 20px;
+        margin-left: 10px;
+
+    }
+
+    #header-container{
+        padding: 5px 10px 5px 10px;
+        flex-direction: column;
+        justify-content: start;
+    }
+}

@@ -1,0 +1,38 @@
+
+#add-employee-container{
+    width: 90%;
+}
+
+#add-title{
+    font-size: 18px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.add-input{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-bottom: 20px;
+    margin-left: 25px;
+    padding: 3px;
+    width: 200px;
+    height: 35px;
+}
+
+.add-label{
+    margin-left: 25px;
+}
+
+#submit-button{
+    border-radius: 5px;
+    border-style: none;
+    background-color: #4488ee;
+    color: #f9f9f9;
+    width: 120px;
+    height: 35px;
+    margin-left: 105px;
+    margin-top: 20px;
+}

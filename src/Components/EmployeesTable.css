@@ -1,0 +1,27 @@
+
+#table-container{
+    width: 80%;
+    margin: 30px auto;
+}
+
+#table-area{
+    width: 90%;
+    margin: 20px auto;
+}
+
+#table-area td{
+    cursor: pointer;
+}
+
+
+#table-search{
+    display: block;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    margin-left: 20px;;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    width: 220px;
+    height: 30px;
+    padding: 5px;
+}
