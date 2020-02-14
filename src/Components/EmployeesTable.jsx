@@ -3,36 +3,35 @@ import { useDispatch } from 'react-redux';
 import { addEmployee } from '../redux/actions';
 import { useSelector } from 'react-redux';
 import { Table } from 'react-bootstrap';
-import { withRouter } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './EmployeesTable.css';
 
-const EmployeesTable = props => {
+const EmployeesTable = () => {
 
     const [query, setQuery] = useState("");
     const [isData, setIsData] = useState(false);
 
+    const history = useHistory();
+
     const handleClickedEmployee = id => {
-        props.history.push({
+        history.push({
             pathname: "/employees/" + id,
             state: { id: id }
         })
     }
 
     const filteredEmployees = query =>
-        employees.filter(emp => emp.employee_name.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
+        employees.filter(emp => emp.name.toLocaleLowerCase().includes(query.toLocaleLowerCase()));
 
     const employees = useSelector(state => state.employees);
 
     const dispatch = useDispatch();
 
     useEffect(() => {
-        fetch("http://dummy.restapiexample.com/api/v1/employees")
+        fetch("http://5e4704f8fd1af600145de8f7.mockapi.io/employees")
             .then(res => res.json())
-            .then(res => res.data.map(emp => dispatch(addEmployee(emp))));
-
-        employees.length > 0 ? setIsData(true) : setIsData(false);
-
-    }, [employees.length]);
+            .then(res => res.map(emp => { dispatch(addEmployee(emp)); setIsData(true); console.log(emp); }));
+    }, []);
 
     let content;
 
@@ -41,7 +40,6 @@ const EmployeesTable = props => {
             <Table responsive striped bordered hover>
                 <thead>
                     <tr>
-                        <th>ID</th>
                         <th>Name</th>
                         <th>Salary</th>
                         <th>Age</th>
@@ -50,10 +48,9 @@ const EmployeesTable = props => {
                 <tbody>
                     {filteredEmployees(query).map(emp =>
                         <tr key={emp.id} onClick={() => handleClickedEmployee(emp.id)}>
-                            <td>{emp.id}</td>
-                            <td>{emp.employee_name}</td>
-                            <td>{emp.employee_salary}</td>
-                            <td>{emp.employee_age}</td>
+                            <td>{emp.name}</td>
+                            <td>{emp.salary}</td>
+                            <td>{emp.age}</td>
                         </tr>
                     )}
                 </tbody>
@@ -73,4 +70,4 @@ const EmployeesTable = props => {
     );
 }
 
-export default withRouter(EmployeesTable);
+export default EmployeesTable;

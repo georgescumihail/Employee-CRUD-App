@@ -1,9 +1,9 @@
 
-#add-employee-container{
+.employee-details-container{
     width: 90%;
 }
 
-#add-title{
+#employee-title{
     font-size: 18px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     margin-top: 30px;
@@ -11,7 +11,11 @@
     margin-left: 20px;
 }
 
-.add-input{
+.employee-label{
+    margin-left: 25px;
+}
+
+.employee-input{
     display: block;
     border: 1px solid #ccc;
     border-radius: 3px;
@@ -22,19 +26,27 @@
     height: 35px;
 }
 
-.add-label{
-    margin-left: 25px;
-}
-
-#submit-button{
+#update-button{
     border-radius: 5px;
     border-style: none;
     background-color: #4488ee;
     color: #f9f9f9;
-    width: 120px;
+    width: 140px;
     height: 35px;
-    margin-left: 105px;
-    margin-top: 20px;
+    margin-left: 25px;
+    margin-top: 40px;
+    display: block;
+}
+
+#delete-button{
+    border-radius: 5px;
+    border-style: none;
+    background-color: #ee7777;
+    color: #f9f9f9;
+    width: 140px;
+    height: 35px;
+    margin-left: 25px;
+    margin-top: 40px;
 }
 
 .error-message{

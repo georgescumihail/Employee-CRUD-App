@@ -1,11 +1,13 @@
-import React, { Component } from 'react';
-import { withRouter } from 'react-router';
+import React from 'react';
+import { useHistory } from 'react-router';
 import './Header.css';
 
-const Header = props => {
+const Header = () => {
+
+    const history = useHistory();
 
     const handleAddClick = () => {
-        props.history.push({
+        history.push({
             pathname: "/add-employee"
         });
     }
@@ -21,4 +23,4 @@ const Header = props => {
     );
 }
 
-export default withRouter(Header);
+export default Header;
